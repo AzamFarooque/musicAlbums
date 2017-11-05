@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let storyboard = UIStoryboard(storyboard: .Main)
-        let leftViewController : ViewController = storyboard.instantiateViewController()
-        let navigation: UINavigationController = UINavigationController(rootViewController: leftViewController)
+        let rootController : ViewController = storyboard.instantiateViewController()
+        let navigation: UINavigationController = UINavigationController(rootViewController: rootController)
         self.window?.rootViewController = navigation
         self.window?.makeKeyAndVisible()
 
