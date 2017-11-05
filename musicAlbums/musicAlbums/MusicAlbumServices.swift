@@ -13,7 +13,7 @@ typealias ServiceResponseArray = (NSArray?, NSError?,NSInteger) -> Void
 
 final class MusicAlbumServices {
     
-    class func fetchStoriesList(onCompletion: ServiceResponseArray){
+    class func fetchMusicAlbum(onCompletion: ServiceResponseArray){
         if let path = Bundle.main.path(forResource: "sample-data", ofType: "json") {
             do {
                 let url = NSURL(fileURLWithPath: path)
