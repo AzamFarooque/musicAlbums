@@ -2,18 +2,21 @@ PODS:
   - Alamofire (4.5.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - expanding-collection (1.0.4)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
   - AlamofireImage (~> 3.1)
+  - expanding-collection (~> 1.0.3)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 02e6b95b11827c1777311622c33864fb582aee8f
+PODFILE CHECKSUM: 5b8aa12b07c03a8f20cd1909553f12ad934768c0
 
 COCOAPODS: 1.0.0

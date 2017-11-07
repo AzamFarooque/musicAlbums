@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
+class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate,UIGestureRecognizerDelegate {
 
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -104,19 +104,39 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         cell.backgroundColor = UIColor.clear
         let section:MusicAlbumModel=musicAlbumArray[indexPath.row] as! MusicAlbumModel
         cell.updateCell(model : section)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.leftSwipe))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.up
+        self.cell.addGestureRecognizer(swipeLeft)
+
         return cell
+    }
+   
+    func leftSwipe(indexPath : NSIndexPath){
+        
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(storyboard: .Main)
-        let subsectionVC : MusicAlbumDetailViewController = storyboard.instantiateViewController()
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFromBottom
-        subsectionVC.model = musicAlbumArray[indexPath.row] as! MusicAlbumModel
-        self.navigationController?.view.layer.add(transition, forKey: nil)
-        self.navigationController?.pushViewController(subsectionVC, animated:false)
+        if cell.isExclusiveTouch == true{
+       
+       // let top = CGAffineTransform(translationX: 0, y: -300)
+       
+        UIView.animate(withDuration: 1.0, delay: 1.0, options: [], animations: {
+       
+        self.cell.frame.origin.y = -100
+        }, completion: nil)
+        }
+        
+//
+//        let storyboard = UIStoryboard(storyboard: .Main)
+//        let subsectionVC : MusicAlbumDetailViewController = storyboard.instantiateViewController()
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+//        transition.type = kCATransitionFromBottom
+//        subsectionVC.model = musicAlbumArray[indexPath.row] as! MusicAlbumModel
+//        self.navigationController?.view.layer.add(transition, forKey: nil)
+//        self.navigationController?.pushViewController(subsectionVC, animated:false)
         
     }
     

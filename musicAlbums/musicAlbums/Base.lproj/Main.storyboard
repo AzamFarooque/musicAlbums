@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l7B-ML-eN1">
-                                <rect key="frame" x="0.0" y="183.5" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="A6F-yg-qVB"/>
+                                    <constraint firstAttribute="height" constant="598" id="A6F-yg-qVB"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xRA-eQ-OHJ">
                                     <size key="itemSize" width="375" height="300"/>
@@ -35,7 +35,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MusicAlbumCollectionViewCell" id="4SL-rG-cpr" customClass="MusicAlbumCollectionViewCell" customModule="musicAlbums" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                        <rect key="frame" x="0.0" y="149" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
@@ -120,7 +120,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="LlQ-9R-SUM" secondAttribute="trailing" id="1SA-mq-deM"/>
                                     <constraint firstItem="euG-uu-QN2" firstAttribute="leading" secondItem="2gb-Xa-oSs" secondAttribute="leading" constant="20" id="2ly-By-ImQ"/>
@@ -137,7 +137,7 @@
                             <constraint firstItem="l7B-ML-eN1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VRE-uR-ujI"/>
                             <constraint firstItem="2gb-Xa-oSs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YZn-c2-FC4"/>
                             <constraint firstAttribute="trailing" secondItem="2gb-Xa-oSs" secondAttribute="trailing" id="gjY-yg-Q2U"/>
-                            <constraint firstItem="l7B-ML-eN1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hlj-lt-FNJ"/>
+                            <constraint firstItem="l7B-ML-eN1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="34.5" id="hlj-lt-FNJ"/>
                             <constraint firstItem="2gb-Xa-oSs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="whx-Z7-lgF"/>
                         </constraints>
                     </view>
