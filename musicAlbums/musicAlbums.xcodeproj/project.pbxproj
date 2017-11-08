@@ -15,8 +15,8 @@
 		A32201CE1FADD67E0026EF70 /* musicAlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32201CD1FADD67E0026EF70 /* musicAlbumsTests.swift */; };
 		A32201D91FADD67E0026EF70 /* musicAlbumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32201D81FADD67E0026EF70 /* musicAlbumsUITests.swift */; };
 		A32F708C1FB2C56F005D0412 /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F708B1FB2C56F005D0412 /* StoryboardHelper.swift */; };
-		A32F70901FB2C87B005D0412 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F708F1FB2C87B005D0412 /* DemoTableViewController.swift */; };
 		A32F70921FB2CF40005D0412 /* ConfigurationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F70911FB2CF40005D0412 /* ConfigurationHelper.swift */; };
+		A32F70961FB3200E005D0412 /* MusicAlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F70951FB3200E005D0412 /* MusicAlbumDetailViewController.swift */; };
 		A37F96851FAEE45000649839 /* MusicAlbumSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37F96841FAEE45000649839 /* MusicAlbumSearchViewController.swift */; };
 		A37F96881FAEE47700649839 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A37F96871FAEE47700649839 /* Search.storyboard */; };
 		A398EF7F1FB20F6700D1E78E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A398EF7E1FB20F6700D1E78E /* Main.storyboard */; };
@@ -64,8 +64,8 @@
 		A32201D81FADD67E0026EF70 /* musicAlbumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicAlbumsUITests.swift; sourceTree = "<group>"; };
 		A32201DA1FADD67E0026EF70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A32F708B1FB2C56F005D0412 /* StoryboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
-		A32F708F1FB2C87B005D0412 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
 		A32F70911FB2CF40005D0412 /* ConfigurationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationHelper.swift; sourceTree = "<group>"; };
+		A32F70951FB3200E005D0412 /* MusicAlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAlbumDetailViewController.swift; sourceTree = "<group>"; };
 		A37F96841FAEE45000649839 /* MusicAlbumSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAlbumSearchViewController.swift; sourceTree = "<group>"; };
 		A37F96871FAEE47700649839 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		A398EF7E1FB20F6700D1E78E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		A3AD5B351FAF0B780091DBE0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A32F708F1FB2C87B005D0412 /* DemoTableViewController.swift */,
+				A32F70951FB3200E005D0412 /* MusicAlbumDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -498,10 +498,10 @@
 				A3C0F8681FADDE1F00D7F0EF /* MusicAlbumServices.swift in Sources */,
 				A37F96851FAEE45000649839 /* MusicAlbumSearchViewController.swift in Sources */,
 				A32201BE1FADD67E0026EF70 /* musicAlbums.xcdatamodeld in Sources */,
+				A32F70961FB3200E005D0412 /* MusicAlbumDetailViewController.swift in Sources */,
 				A32F70921FB2CF40005D0412 /* ConfigurationHelper.swift in Sources */,
 				A398EF871FB2288E00D1E78E /* ViewController.swift in Sources */,
 				A32F708C1FB2C56F005D0412 /* StoryboardHelper.swift in Sources */,
-				A32F70901FB2C87B005D0412 /* DemoTableViewController.swift in Sources */,
 				A32201B61FADD67E0026EF70 /* AppDelegate.swift in Sources */,
 				A3C0F8661FADDE0600D7F0EF /* MusicAlbumModel.swift in Sources */,
 				A3AD5B2F1FAF06D70091DBE0 /* UIView.swift in Sources */,

@@ -28,42 +28,17 @@ class ViewController: ExpandingViewController {
         
     }
  }
-
-
    extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         registerCell()
         itemSize = CGSize(width: 256, height: 335)
         configureNavBar()
         addGesture(to: collectionView!)
         fetchStories()
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"searchIcon-1"), style: .plain, target: self, action: #selector(addTapped))
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.black
-
+       
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-    }
-    
-    func addTapped(){
-        
-        let storyboard = UIStoryboard(storyboard: .Search)
-        let subsectionVC : MusicAlbumSearchViewController = storyboard.instantiateViewController()
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFromBottom
-        subsectionVC.musicAlbumArray = musicAlbumArray
-       self.navigationController?.view.layer.add(transition, forKey: nil)
-        self.navigationController?.pushViewController(subsectionVC, animated:false)
-        
-
-    }
     
     // PRAGMA MARK :- Fetch Sample Data JSON
     
@@ -96,14 +71,20 @@ extension ViewController {
         collectionView?.register(nib, forCellWithReuseIdentifier: String(describing: DemoCollectionViewCell.self))
     }
     
-    fileprivate func getViewController() -> ExpandingTableViewController {
-        let storyboard = UIStoryboard(storyboard: .Main)
-        let toViewController: DemoTableViewController = storyboard.instantiateViewController()
-        return toViewController
+       fileprivate func configureNavBar() {
+        navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     }
     
-    fileprivate func configureNavBar() {
-        navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+fileprivate func naviateToDetailViewController(indexPath : IndexPath){
+    let storyboard = UIStoryboard(storyboard: .Main)
+    let subsectionVC : MusicAlbumDetailViewController = storyboard.instantiateViewController()
+    let transition = CATransition()
+    transition.duration = 0.5
+    transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    transition.type = kCATransitionFromBottom
+    self.navigationController?.view.layer.add(transition, forKey: nil)
+    subsectionVC.model = musicAlbumArray[indexPath.row] as! MusicAlbumModel
+    self.navigationController?.pushViewController(subsectionVC, animated:false)
     }
 }
 
@@ -131,11 +112,10 @@ extension ViewController {
             cell.cellIsOpen(true)
             
         } else {
-            pushToViewController(getViewController())
+            naviateToDetailViewController(indexPath: indexPath)
             
         }
     }
-
 }
 
 /// MARK: Gesture
@@ -157,7 +137,7 @@ extension ViewController {
         let indexPath = IndexPath(row: currentIndex, section: 0)
         guard let cell  = collectionView?.cellForItem(at: indexPath) as? DemoCollectionViewCell else { return }
         if cell.isOpened == true && sender.direction == .up {
-            pushToViewController(getViewController())
+    naviateToDetailViewController(indexPath: indexPath)
                   }
         let open = sender.direction == .up ? true : false
         cell.cellIsOpen(open)

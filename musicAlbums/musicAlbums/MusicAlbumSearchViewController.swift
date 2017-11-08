@@ -17,8 +17,6 @@ class MusicAlbumSearchViewController: ExpandingViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     var musicAlbumArray : NSArray!
     var musicAlbumSearchArray : [MusicAlbumModel] = []
-    
-    
     let reuseIdentifier = "DemoCollectionViewCell"
    
     
@@ -33,11 +31,7 @@ class MusicAlbumSearchViewController: ExpandingViewController {
        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.frame.size.height = 0
-    }
-    
+        
     // PRAGMA MARK : SearchBar Delegates
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -84,10 +78,16 @@ extension MusicAlbumSearchViewController {
         collectionView?.register(nib, forCellWithReuseIdentifier: String(describing: DemoCollectionViewCell.self))
     }
     
-    fileprivate func getViewController() -> ExpandingTableViewController {
+    fileprivate func naviateToDetailViewController(indexPath : IndexPath){
         let storyboard = UIStoryboard(storyboard: .Main)
-        let toViewController: DemoTableViewController = storyboard.instantiateViewController()
-        return toViewController
+        let subsectionVC : MusicAlbumDetailViewController = storyboard.instantiateViewController()
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionFromBottom
+        self.navigationController?.view.layer.add(transition, forKey: nil)
+        subsectionVC.model = musicAlbumArray[indexPath.row] as! MusicAlbumModel
+        self.navigationController?.pushViewController(subsectionVC, animated:false)
     }
     
     fileprivate func configureNavBar() {
@@ -119,7 +119,7 @@ extension MusicAlbumSearchViewController {
             cell.cellIsOpen(true)
             
         } else {
-            pushToViewController(getViewController())
+            naviateToDetailViewController(indexPath: indexPath)
             
         }
     }
@@ -145,7 +145,7 @@ extension MusicAlbumSearchViewController {
         let indexPath = IndexPath(row: currentIndex, section: 0)
         guard let cell  = collectionView?.cellForItem(at: indexPath) as? DemoCollectionViewCell else { return }
         if cell.isOpened == true && sender.direction == .up {
-            pushToViewController(getViewController())
+            naviateToDetailViewController(indexPath: indexPath)
             
         }
         let open = sender.direction == .up ? true : false
