@@ -25,7 +25,7 @@ class MusicAlbumSearchViewController: UIViewController,UICollectionViewDelegate,
     let reuseIdentifier = "MusicAlbumCollectionViewCell"
     var itemWidth = CGFloat(0)
     var currentItem = 0
-    var cell : MusicAlbumCollectionViewCell!
+    var cell : DemoCollectionViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,7 +124,7 @@ class MusicAlbumSearchViewController: UIViewController,UICollectionViewDelegate,
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MusicAlbumCollectionViewCell
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! DemoCollectionViewCell
         cell.tag = indexPath.row
         cell.backgroundColor = UIColor.clear
         let section:MusicAlbumModel=musicAlbumSearchArray[indexPath.row] 
@@ -134,15 +134,15 @@ class MusicAlbumSearchViewController: UIViewController,UICollectionViewDelegate,
     
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(storyboard: .Main)
-        let subsectionVC : MusicAlbumDetailViewController = storyboard.instantiateViewController()
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFromBottom
-        subsectionVC.model = musicAlbumSearchArray[indexPath.row] 
-        self.navigationController?.view.layer.add(transition, forKey: nil)
-        self.navigationController?.pushViewController(subsectionVC, animated:false)
+//        let storyboard = UIStoryboard(storyboard: .Main)
+//        let subsectionVC : MusicAlbumDetailViewController = storyboard.instantiateViewController()
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+//        transition.type = kCATransitionFromBottom
+//        subsectionVC.model = musicAlbumSearchArray[indexPath.row] 
+//        self.navigationController?.view.layer.add(transition, forKey: nil)
+//        self.navigationController?.pushViewController(subsectionVC, animated:false)
         
     }
     override func didReceiveMemoryWarning() {

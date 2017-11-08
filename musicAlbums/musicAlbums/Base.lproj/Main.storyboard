@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Collection View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="musicAlbums" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MAHomeCollectionViewController" id="BYZ-38-t0r" customClass="MAHomeCollectionViewController" customModule="musicAlbums" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,82 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l7B-ML-eN1">
-                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="598" id="A6F-yg-qVB"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xRA-eQ-OHJ">
-                                    <size key="itemSize" width="375" height="300"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MusicAlbumCollectionViewCell" id="4SL-rG-cpr" customClass="MusicAlbumCollectionViewCell" customModule="musicAlbums" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="149" width="375" height="300"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WiP-n7-Hp9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOq-Wq-Ijw">
-                                                    <rect key="frame" x="0.0" y="10" width="375" height="46"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="46" id="Y37-z2-MjK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="20"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWQ-N9-TQm">
-                                                    <rect key="frame" x="10" y="235" width="152" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="O27-R7-Kh8"/>
-                                                        <constraint firstAttribute="width" constant="152" id="Uw2-t9-yJx"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="12"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMk-Pj-wkx">
-                                                    <rect key="frame" x="213" y="235" width="152" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="QwL-Je-jt0"/>
-                                                        <constraint firstAttribute="width" constant="152" id="yQH-An-GQ6"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="12"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="KOq-Wq-Ijw" firstAttribute="leading" secondItem="4SL-rG-cpr" secondAttribute="leading" id="1Jh-1P-FQi"/>
-                                            <constraint firstAttribute="bottom" secondItem="jMk-Pj-wkx" secondAttribute="bottom" constant="30" id="6RC-rK-pph"/>
-                                            <constraint firstAttribute="bottom" secondItem="WiP-n7-Hp9" secondAttribute="bottom" id="6Ry-ch-tJ1"/>
-                                            <constraint firstItem="WiP-n7-Hp9" firstAttribute="top" secondItem="4SL-rG-cpr" secondAttribute="top" id="8c8-6e-tAd"/>
-                                            <constraint firstAttribute="bottom" secondItem="bWQ-N9-TQm" secondAttribute="bottom" constant="30" id="G4l-hP-96f"/>
-                                            <constraint firstItem="WiP-n7-Hp9" firstAttribute="leading" secondItem="4SL-rG-cpr" secondAttribute="leading" id="Suh-g6-dDX"/>
-                                            <constraint firstAttribute="trailing" secondItem="WiP-n7-Hp9" secondAttribute="trailing" id="anQ-Z0-xC2"/>
-                                            <constraint firstItem="bWQ-N9-TQm" firstAttribute="leading" secondItem="4SL-rG-cpr" secondAttribute="leading" constant="10" id="gGg-8H-0Gx"/>
-                                            <constraint firstAttribute="trailing" secondItem="KOq-Wq-Ijw" secondAttribute="trailing" id="j9j-fs-7Na"/>
-                                            <constraint firstItem="KOq-Wq-Ijw" firstAttribute="top" secondItem="4SL-rG-cpr" secondAttribute="top" constant="10" id="nd8-5d-IEf"/>
-                                            <constraint firstAttribute="trailing" secondItem="jMk-Pj-wkx" secondAttribute="trailing" constant="10" id="oLd-tl-F9h"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="artistNameLabel" destination="bWQ-N9-TQm" id="Ac8-eD-oSJ"/>
-                                            <outlet property="imageView" destination="WiP-n7-Hp9" id="k55-vS-PO4"/>
-                                            <outlet property="musicPublishYearLabel" destination="jMk-Pj-wkx" id="5Be-u7-oOg"/>
-                                            <outlet property="title" destination="KOq-Wq-Ijw" id="eKg-Vf-tvZ"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-Xa-oSs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
@@ -133,16 +57,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="l7B-ML-eN1" secondAttribute="trailing" id="8Js-L7-AAH"/>
-                            <constraint firstItem="l7B-ML-eN1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VRE-uR-ujI"/>
                             <constraint firstItem="2gb-Xa-oSs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YZn-c2-FC4"/>
                             <constraint firstAttribute="trailing" secondItem="2gb-Xa-oSs" secondAttribute="trailing" id="gjY-yg-Q2U"/>
-                            <constraint firstItem="l7B-ML-eN1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="34.5" id="hlj-lt-FNJ"/>
                             <constraint firstItem="2gb-Xa-oSs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="whx-Z7-lgF"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="l7B-ML-eN1" id="DtJ-VF-ytf"/>
                         <outlet property="headerView" destination="2gb-Xa-oSs" id="WZw-Ho-iLL"/>
                     </connections>
                 </viewController>

@@ -9,27 +9,24 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import expanding_collection
 
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate,UIGestureRecognizerDelegate {
-
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
+class ViewController: ExpandingViewController {
     var musicAlbumArray : NSArray!
-    var pageControl : UIPageControl!
-    let collectionMargin = CGFloat(50)
-    let itemSpacing = CGFloat(20)
-    let itemHeight = CGFloat(322)
-    let reuseIdentifier = "MusicAlbumCollectionViewCell"
-    var itemWidth = CGFloat(0)
-    var currentItem = 0
-    var cell : MusicAlbumCollectionViewCell!
+    let reuseIdentifier = "DemoCollectionViewCell"
+    
+}
+
+
+   extension ViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        registerCell()
+        itemSize = CGSize(width: 256, height: 335)
+        configureNavBar()
+        addGesture(to: collectionView!)
         fetchStories()
-        self.navigationController?.navigationBar.isHidden = true
-        pageControl = UIPageControl()
-        headerView.addShadow()
     }
     
     // PRAGMA MARK :- Fetch Sample Data JSON
@@ -43,121 +40,96 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 print("got it..")
                 self.view.hideLoadingIndicator()
                 self.musicAlbumArray = responseObject
-                collectionView.delegate = self
-                collectionView.dataSource = self
-                collectionView.reloadData()
+            }
         }
+    }
+    
+    // PRAGMA MARK : Hide StatusBar Hidden
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    
+}
+
+    
+extension ViewController {
+    
+    fileprivate func registerCell() {
+        let nib = UINib(nibName: String(describing: DemoCollectionViewCell.self), bundle: nil)
+        collectionView?.register(nib, forCellWithReuseIdentifier: String(describing: DemoCollectionViewCell.self))
+    }
+    
+    fileprivate func getViewController() -> ExpandingTableViewController {
+        let storyboard = UIStoryboard(storyboard: .Main)
+        let toViewController: DemoTableViewController = storyboard.instantiateViewController()
+        return toViewController
+    }
+    
+    fileprivate func configureNavBar() {
+        navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     }
 }
-   
-   // PRAGMA MARK :- UICollectionViewFlowLayout setup
-    
-    func setup() {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        itemWidth =  UIScreen.main.bounds.width - collectionMargin * 2.0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
-        layout.headerReferenceSize = CGSize(width: collectionMargin, height: 0)
-        layout.footerReferenceSize = CGSize(width: collectionMargin, height: 0)
-        layout.minimumLineSpacing = itemSpacing
-        layout.scrollDirection = .horizontal
-        collectionView!.collectionViewLayout = layout
-        collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
-    }
-    
-   //  PRAGMA MARK: - UIScrollViewDelegate protocol
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let pageWidth = Float(itemWidth + itemSpacing)
-        let targetXContentOffset = Float(targetContentOffset.pointee.x)
-        let contentWidth = Float(collectionView!.contentSize.width  )
-        var newPage = Float(self.pageControl.currentPage)
-        if velocity.x == 0 {
-            newPage = floor( (targetXContentOffset - Float(pageWidth) / 2) / Float(pageWidth)) + 1.0
-        } else {
-            newPage = Float(velocity.x > 0 ? self.pageControl.currentPage + 1 : self.pageControl.currentPage - 1)
-            if newPage < 0 {
-                newPage = 0
-            }
-            if (newPage > contentWidth / pageWidth) {
-                newPage = ceil(contentWidth / pageWidth) - 1.0
-            }
-        }
-        self.pageControl.currentPage = Int(newPage)
-        let point = CGPoint (x: CGFloat(newPage * pageWidth), y: targetContentOffset.pointee.y)
-        targetContentOffset.pointee = point
-    }
-    
-    // PRAGMA MARK : - CollectionView Deleagtes
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         self.pageControl.numberOfPages = musicAlbumArray.count
+
+// MARK: UICollectionViewDataSource
+
+extension ViewController {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return musicAlbumArray.count == 0 ? 0 : musicAlbumArray.count
     }
-    private func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MusicAlbumCollectionViewCell
-        cell.tag = indexPath.row
-        cell.backgroundColor = UIColor.clear
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DemoCollectionViewCell
+        
         let section:MusicAlbumModel=musicAlbumArray[indexPath.row] as! MusicAlbumModel
         cell.updateCell(model : section)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.leftSwipe))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.up
-        self.cell.addGestureRecognizer(swipeLeft)
-
         return cell
     }
-   
-    func leftSwipe(indexPath : NSIndexPath){
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? DemoCollectionViewCell
+            , currentIndex == indexPath.row else { return }
         
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if cell.isExclusiveTouch == true{
-       
-       // let top = CGAffineTransform(translationX: 0, y: -300)
-       
-        UIView.animate(withDuration: 1.0, delay: 1.0, options: [], animations: {
-       
-        self.cell.frame.origin.y = -100
-        }, completion: nil)
+        if cell.isOpened == false {
+            cell.cellIsOpen(true)
+            
+        } else {
+            pushToViewController(getViewController())
+            
         }
-        
-//
-//        let storyboard = UIStoryboard(storyboard: .Main)
-//        let subsectionVC : MusicAlbumDetailViewController = storyboard.instantiateViewController()
-//        let transition = CATransition()
-//        transition.duration = 0.5
-//        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-//        transition.type = kCATransitionFromBottom
-//        subsectionVC.model = musicAlbumArray[indexPath.row] as! MusicAlbumModel
-//        self.navigationController?.view.layer.add(transition, forKey: nil)
-//        self.navigationController?.pushViewController(subsectionVC, animated:false)
-        
-    }
-    
-    // PRAGMA MARK : - Search Action
-    
-    @IBAction func didTapSearch(_ sender: Any) {
-        let storyboard = UIStoryboard(storyboard: .Search)
-        let subsectionVC : MusicAlbumSearchViewController = storyboard.instantiateViewController()
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFromBottom
-        subsectionVC.musicAlbumArray = musicAlbumArray
-        self.navigationController?.view.layer.add(transition, forKey: nil)
-        self.navigationController?.pushViewController(subsectionVC, animated:false)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
     }
 
 }
+
+
+
+/// MARK: Gesture
+extension ViewController {
+    
+    fileprivate func addGesture(to view: UIView) {
+        let upGesture = Init(UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeHandler(_:)))) {
+            $0.direction = .up
+        }
+        
+        let downGesture = Init(UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeHandler(_:)))) {
+            $0.direction = .down
+        }
+        view.addGestureRecognizer(upGesture)
+        view.addGestureRecognizer(downGesture)
+    }
+    
+    func swipeHandler(_ sender: UISwipeGestureRecognizer) {
+        let indexPath = IndexPath(row: currentIndex, section: 0)
+        guard let cell  = collectionView?.cellForItem(at: indexPath) as? DemoCollectionViewCell else { return }
+        // double swipe Up transition
+        if cell.isOpened == true && sender.direction == .up {
+            pushToViewController(getViewController())
+            
+        }
+        let open = sender.direction == .up ? true : false
+        cell.cellIsOpen(open)
+    }
+}
+
 

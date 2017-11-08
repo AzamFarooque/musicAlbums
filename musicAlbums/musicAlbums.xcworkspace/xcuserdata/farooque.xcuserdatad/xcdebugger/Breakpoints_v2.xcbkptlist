@@ -2,4 +2,156 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "musicAlbums/DemoViewController.swift"
+            timestampString = "531769189.053836"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "DemoViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "musicAlbums/DemoCollectionViewCell.swift"
+            timestampString = "531773383.820721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "updateCell(model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "musicAlbums/DemoCollectionViewCell.swift"
+            timestampString = "531773384.806262"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "DemoCollectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "musicAlbums.DemoCollectionViewCell.__deallocating_deinit"
+                  moduleName = "musicAlbums"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farooque/GitHub/musicAlbums/musicAlbums/musicAlbums/DemoCollectionViewCell.swift"
+                  timestampString = "531807688.15361"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "musicAlbums.DemoCollectionViewCell.__ivar_destroyer"
+                  moduleName = "musicAlbums"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farooque/GitHub/musicAlbums/musicAlbums/musicAlbums/DemoCollectionViewCell.swift"
+                  timestampString = "531807688.155032"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "musicAlbums.DemoCollectionViewCell.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;musicAlbums.DemoCollectionViewCell&gt;"
+                  moduleName = "musicAlbums"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farooque/GitHub/musicAlbums/musicAlbums/musicAlbums/DemoCollectionViewCell.swift"
+                  timestampString = "531807688.156309"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "musicAlbums.DemoCollectionViewCell.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;musicAlbums.DemoCollectionViewCell&gt;"
+                  moduleName = "musicAlbums"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farooque/GitHub/musicAlbums/musicAlbums/musicAlbums/DemoCollectionViewCell.swift"
+                  timestampString = "531807688.157575"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "musicAlbums.DemoCollectionViewCell.init (frame : __C.CGRect) -&gt; musicAlbums.DemoCollectionViewCell"
+                  moduleName = "musicAlbums"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farooque/GitHub/musicAlbums/musicAlbums/musicAlbums/DemoCollectionViewCell.swift"
+                  timestampString = "531807688.158851"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "musicAlbums.DemoCollectionViewCell.__allocating_init (frame : __C.CGRect) -&gt; musicAlbums.DemoCollectionViewCell"
+                  moduleName = "musicAlbums"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/farooque/GitHub/musicAlbums/musicAlbums/musicAlbums/DemoCollectionViewCell.swift"
+                  timestampString = "531807688.160112"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
