@@ -144,8 +144,8 @@
 		A32201B41FADD67E0026EF70 /* musicAlbums */ = {
 			isa = PBXGroup;
 			children = (
-				A32F708B1FB2C56F005D0412 /* StoryboardHelper.swift */,
-				A32F70911FB2CF40005D0412 /* ConfigurationHelper.swift */,
+				A32F70981FB32AF1005D0412 /* Helper */,
+				A32F70971FB32AE0005D0412 /* StoryBoard */,
 				A3C0F8621FADDC3000D7F0EF /* JSONFile */,
 				A3C0F8631FADDDCD00D7F0EF /* Services */,
 				A37F96801FAED9B300649839 /* AppDelegate */,
@@ -177,6 +177,22 @@
 				A32201DA1FADD67E0026EF70 /* Info.plist */,
 			);
 			path = musicAlbumsUITests;
+			sourceTree = "<group>";
+		};
+		A32F70971FB32AE0005D0412 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				A32F708B1FB2C56F005D0412 /* StoryboardHelper.swift */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		A32F70981FB32AF1005D0412 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A32F70911FB2CF40005D0412 /* ConfigurationHelper.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		A37F967E1FAED96900649839 /* MusicAlbumHome */ = {
