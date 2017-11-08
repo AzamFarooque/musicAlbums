@@ -10,12 +10,16 @@ import UIKit
 
 class MusicAlbumDetailViewController: UIViewController,UIScrollViewDelegate {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     var model : MusicAlbumModel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         imageView.setImage(url: model.imageURLLarge)
+        titleLabel.text = model.title!
         
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0

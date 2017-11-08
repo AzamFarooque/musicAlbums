@@ -114,6 +114,20 @@
                                                     <action selector="didTapCancel:" destination="jSf-rV-m4I" eventType="touchUpInside" id="dUe-7Z-zLh"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATCOASTAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxM-vQ-TBW">
+                                                <rect key="frame" x="0.0" y="10" width="375" height="30"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Qhj-bz-p2g"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.076029349659999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -123,6 +137,9 @@
                                             <constraint firstAttribute="trailing" secondItem="Gf2-k9-IJe" secondAttribute="trailing" id="HR5-ma-MrV"/>
                                             <constraint firstAttribute="trailing" secondItem="raT-M4-5B9" secondAttribute="trailing" constant="30" id="ZGW-hZ-IsY"/>
                                             <constraint firstItem="Gf2-k9-IJe" firstAttribute="top" secondItem="ATV-eg-lWy" secondAttribute="top" id="fbz-zc-eMj"/>
+                                            <constraint firstAttribute="trailing" secondItem="hxM-vQ-TBW" secondAttribute="trailing" id="mTZ-cH-Uow"/>
+                                            <constraint firstItem="hxM-vQ-TBW" firstAttribute="top" secondItem="ATV-eg-lWy" secondAttribute="top" constant="10" id="wp6-LQ-V11"/>
+                                            <constraint firstItem="hxM-vQ-TBW" firstAttribute="leading" secondItem="ATV-eg-lWy" secondAttribute="leading" id="xhe-tw-xPb"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -148,11 +165,12 @@
                     <connections>
                         <outlet property="imageView" destination="Gf2-k9-IJe" id="lZe-W9-4J3"/>
                         <outlet property="scrollView" destination="QEy-nf-1KQ" id="AiI-Cs-xqW"/>
+                        <outlet property="titleLabel" destination="hxM-vQ-TBW" id="piI-ey-WTX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPS-qN-bh1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2122" y="417"/>
+            <point key="canvasLocation" x="2120.8000000000002" y="416.94152923538235"/>
         </scene>
     </scenes>
     <resources>
