@@ -28,7 +28,6 @@
 		A3C0F8681FADDE1F00D7F0EF /* MusicAlbumServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C0F8671FADDE1F00D7F0EF /* MusicAlbumServices.swift */; };
 		A3C0F86C1FADE39000D7F0EF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C0F86B1FADE39000D7F0EF /* SwiftyJSON.framework */; };
 		A3C0F86F1FADEF7700D7F0EF /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C0F86E1FADEF7700D7F0EF /* DemoCollectionViewCell.swift */; };
-		A3C0F8721FADF51E00D7F0EF /* MusicAlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C0F8711FADF51E00D7F0EF /* MusicAlbumDetailViewController.swift */; };
 		A3EB65C51FB2412700F6A424 /* DemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3EB65C41FB2412700F6A424 /* DemoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +78,6 @@
 		A3C0F8691FADE26000D7F0EF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/musicAlbums-chahudrzxguojpbcezpvqlckngcd/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		A3C0F86B1FADE39000D7F0EF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Release-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		A3C0F86E1FADEF7700D7F0EF /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
-		A3C0F8711FADF51E00D7F0EF /* MusicAlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicAlbumDetailViewController.swift; sourceTree = "<group>"; };
 		A3EB65C41FB2412700F6A424 /* DemoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCollectionViewCell.xib; sourceTree = "<group>"; };
 		BBEE9E3361B0F928F641E6A8 /* Pods-musicAlbums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-musicAlbums.release.xcconfig"; path = "Pods/Target Support Files/Pods-musicAlbums/Pods-musicAlbums.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				A32F708F1FB2C87B005D0412 /* DemoTableViewController.swift */,
-				A3C0F8711FADF51E00D7F0EF /* MusicAlbumDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -507,7 +504,6 @@
 				A32F70901FB2C87B005D0412 /* DemoTableViewController.swift in Sources */,
 				A32201B61FADD67E0026EF70 /* AppDelegate.swift in Sources */,
 				A3C0F8661FADDE0600D7F0EF /* MusicAlbumModel.swift in Sources */,
-				A3C0F8721FADF51E00D7F0EF /* MusicAlbumDetailViewController.swift in Sources */,
 				A3AD5B2F1FAF06D70091DBE0 /* UIView.swift in Sources */,
 				A3AD5B2D1FAF06970091DBE0 /* UIImage.swift in Sources */,
 			);

@@ -13,15 +13,16 @@ class DemoCollectionViewCell : BasePageCollectionCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
-    
+    @IBOutlet weak var backgroundImgView: UIImageView!
     @IBOutlet weak var musicPublishYearLabel: UILabel!
     
     
     func updateCell(model : MusicAlbumModel){
          imageView.setImage(url: model.imageURLSmall)
-//         title.text = model.title!
-//         artistNameLabel.text = "Artist: "+model.artist!
-//         musicPublishYearLabel.text = "Year: "+model.year!
+         backgroundImgView.setImage(url: model.imageURLLarge)
+         title.text = model.title!
+         artistNameLabel.text = "Artist: "+model.artist!
+         musicPublishYearLabel.text = "Year: "+model.year!
     }
     
     override func awakeFromNib() {

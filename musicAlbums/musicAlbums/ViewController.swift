@@ -14,19 +14,55 @@ import expanding_collection
 class ViewController: ExpandingViewController {
     var musicAlbumArray : NSArray!
     let reuseIdentifier = "DemoCollectionViewCell"
-    
-}
+    @IBAction func didTapSearch(_ sender: Any) {
+        
+    let storyboard = UIStoryboard(storyboard: .Search)
+    let subsectionVC : MusicAlbumSearchViewController = storyboard.instantiateViewController()
+    let transition = CATransition()
+    transition.duration = 0.5
+    transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    transition.type = kCATransitionFromBottom
+    subsectionVC.musicAlbumArray = musicAlbumArray
+    self.navigationController?.view.layer.add(transition, forKey: nil)
+    self.navigationController?.pushViewController(subsectionVC, animated:false)
+        
+    }
+ }
 
 
    extension ViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
         registerCell()
         itemSize = CGSize(width: 256, height: 335)
         configureNavBar()
         addGesture(to: collectionView!)
         fetchStories()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"searchIcon"), style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.black
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    func addTapped(){
+        
+        let storyboard = UIStoryboard(storyboard: .Search)
+        let subsectionVC : MusicAlbumSearchViewController = storyboard.instantiateViewController()
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionFromBottom
+        subsectionVC.musicAlbumArray = musicAlbumArray
+       self.navigationController?.view.layer.add(transition, forKey: nil)
+        self.navigationController?.pushViewController(subsectionVC, animated:false)
+        
+
     }
     
     // PRAGMA MARK :- Fetch Sample Data JSON
@@ -102,8 +138,6 @@ extension ViewController {
 
 }
 
-
-
 /// MARK: Gesture
 extension ViewController {
     
@@ -122,11 +156,9 @@ extension ViewController {
     func swipeHandler(_ sender: UISwipeGestureRecognizer) {
         let indexPath = IndexPath(row: currentIndex, section: 0)
         guard let cell  = collectionView?.cellForItem(at: indexPath) as? DemoCollectionViewCell else { return }
-        // double swipe Up transition
         if cell.isOpened == true && sender.direction == .up {
             pushToViewController(getViewController())
-            
-        }
+                  }
         let open = sender.direction == .up ? true : false
         cell.cellIsOpen(open)
     }

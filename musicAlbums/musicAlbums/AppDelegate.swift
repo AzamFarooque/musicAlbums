@@ -1,9 +1,9 @@
 //
-//  AppDelegate.swift
-//  DemoExpandingCollection
+//  ViewController.swift
+//  musicAlbums
 //
-//  Created by Alex K. on 25/05/16.
-//  Copyright © 2016 Alex K. All rights reserved.
+//  Created by Farooque on 04/11/17.
+//  Copyright © 2017 Farooque. All rights reserved.
 //
 
 import UIKit

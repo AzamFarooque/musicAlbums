@@ -13,6 +13,7 @@
         <!--View Controller-->
         <scene sceneID="7vj-xm-Mde">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cU0-3v-d17" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="owA-8G-88G" customClass="ViewController" customModule="musicAlbums" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CpK-wn-s3i"/>
@@ -36,6 +37,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Mck-gv-XOR">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="searchIcon" id="QSf-8o-sss"/>
                         <view key="titleView" contentMode="scaleToFill" id="U0J-H7-fvX">
                             <rect key="frame" x="67.5" y="5.5" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,13 +48,13 @@
                         <segue destination="7RW-i0-HfN" kind="show" identifier="NoName" id="enc-PY-spo"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cU0-3v-d17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1258" y="428"/>
+            <point key="canvasLocation" x="1256.8" y="427.73613193403304"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ECt-UZ-ruI">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Yh-rW-xNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L1n-Ia-Jrw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -65,13 +67,13 @@
                         <segue destination="owA-8G-88G" kind="relationship" relationship="rootViewController" id="1aC-mc-OKf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Yh-rW-xNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="530" y="428"/>
         </scene>
         <!--Demo Table View Controller-->
         <scene sceneID="7Xk-ar-e7L">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="koT-TQ-RUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="DemoTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="7RW-i0-HfN" customClass="DemoTableViewController" customModule="musicAlbums" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2SU-lJ-2AP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -500,7 +502,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9zG-W9-jGP">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="searchIcon" id="sSw-AG-wrF"/>
+                        <barButtonItem key="leftBarButtonItem" image="searchIcon" id="R6y-Ub-tmO"/>
                         <view key="titleView" contentMode="scaleToFill" id="qyb-Fh-aIr" userLabel="Item View">
                             <rect key="frame" x="67.5" y="5.5" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -531,7 +533,6 @@
                         <outlet property="titleImageViewXConstraint" destination="sdW-OO-2BS" id="huK-Bc-7RX"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="koT-TQ-RUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1967" y="428"/>
         </scene>

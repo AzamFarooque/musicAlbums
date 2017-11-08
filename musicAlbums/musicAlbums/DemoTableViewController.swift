@@ -1,21 +1,22 @@
 //
-//  DemoTableViewController.swift
-//  TestCollectionView
+//  ViewController.swift
+//  musicAlbums
 //
-//  Created by Alex K. on 24/05/16.
-//  Copyright © 2016 Alex K. All rights reserved.
+//  Created by Farooque on 08/11/17.
+//  Copyright © 2017 Farooque. All rights reserved.
 //
 
 import UIKit
 import expanding_collection
 
 class DemoTableViewController: ExpandingTableViewController {
-  
-  fileprivate var scrollOffsetY: CGFloat = 0
-  override func viewDidLoad() {
+   override func viewDidLoad() {
     super.viewDidLoad()
     configureNavBar()
     headerHeight = 236
+    
+       
+    
     //tableView.backgroundView = UIImageView(image: image1)
   }
   
@@ -49,36 +50,14 @@ extension DemoTableViewController {
 
 // MARK: Actions
 extension DemoTableViewController {
+    
+    func cancel(){
+    popTransitionAnimation()
+    }
   
   @IBAction func backButtonHandler(_ sender: AnyObject) {
-    // buttonAnimation
-    let viewControllers: [ViewController?] = navigationController?.viewControllers.map { $0 as? ViewController } ?? []
-
-    for viewController in viewControllers {
-//      if let rightButton = viewController?.navigationItem.rightBarButtonItem as? AnimatingBarButton {
-//        rightButton.animationSelected(false)
-//      }
-    }
     popTransitionAnimation()
   }
 }
 
-// MARK: UIScrollViewDelegate
-extension DemoTableViewController {
-  
-  override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//    if scrollView.contentOffset.y < -25 {
-//      // buttonAnimation
-//      let viewControllers: [DemoViewController?] = navigationController?.viewControllers.map { $0 as? DemoViewController } ?? []
-//
-//      for viewController in viewControllers {
-//        if let rightButton = viewController?.navigationItem.rightBarButtonItem as? AnimatingBarButton {
-//          rightButton.animationSelected(false)
-//        }
-//      }
-//      popTransitionAnimation()
-//    }
-    
-    scrollOffsetY = scrollView.contentOffset.y
-  }
-}
+
