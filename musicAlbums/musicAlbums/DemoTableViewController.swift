@@ -12,11 +12,9 @@ import expanding_collection
 class DemoTableViewController: ExpandingTableViewController {
    override func viewDidLoad() {
     super.viewDidLoad()
+    navigationController?.navigationBar.isHidden = false
     configureNavBar()
     headerHeight = 236
-    
-       
-    
     //tableView.backgroundView = UIImageView(image: image1)
   }
   

@@ -41,7 +41,7 @@ class ViewController: ExpandingViewController {
         addGesture(to: collectionView!)
         fetchStories()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"searchIcon"), style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"searchIcon-1"), style: .plain, target: self, action: #selector(addTapped))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.black
 
     }

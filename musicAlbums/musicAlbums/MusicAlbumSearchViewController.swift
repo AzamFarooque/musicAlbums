@@ -24,7 +24,6 @@ class MusicAlbumSearchViewController: ExpandingViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         searchBar.becomeFirstResponder()
         searchBar.autocorrectionType = .no
         self.searchBar.searchBarStyle = UISearchBarStyle.minimal
@@ -32,6 +31,11 @@ class MusicAlbumSearchViewController: ExpandingViewController {
         textFieldInsideSearchBar?.textColor = UIColor.black
         textFieldInsideSearchBar?.backgroundColor = UIColor.white
        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.frame.size.height = 0
     }
     
     // PRAGMA MARK : SearchBar Delegates
