@@ -15,7 +15,8 @@ class DemoTableViewController: ExpandingTableViewController {
     navigationController?.navigationBar.isHidden = false
     configureNavBar()
     headerHeight = 236
-    //tableView.backgroundView = UIImageView(image: image1)
+    
+
   }
   
   @IBOutlet weak var titleImageView: UIImageView!
@@ -48,12 +49,7 @@ extension DemoTableViewController {
 
 // MARK: Actions
 extension DemoTableViewController {
-    
-    func cancel(){
-    popTransitionAnimation()
-    }
-  
-  @IBAction func backButtonHandler(_ sender: AnyObject) {
+     @IBAction func backButtonHandler(_ sender: AnyObject) {
     popTransitionAnimation()
   }
 }
